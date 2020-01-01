@@ -1,0 +1,72 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-md-2 example-container">
+      <img class="example-full-width" id="avatar" src="https://www.w3schools.com/w3images/avatar2.png">
+      
+    </div>
+    <div class="example-container col-md-5">
+      <h2>User details</h2>
+      <mat-form-field class="example-full-width">
+        <input matInput type="text" formControlName="name" placeholder="Full Name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" [value]="picker" formControlName="dateofbirth" placeholder="Your birthday">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Gender" formControlName="selectedgender">
+          <mat-option *ngFor="let temp of gender" [id]="temp.id" [value]="temp.value">
+            {{temp.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Country" formControlName="selectedcountry">
+                <mat-option *ngFor="let temp of country" [id]="temp.id" [value]="temp.value">
+                  {{temp.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput formControlName="phone" #message maxlength="10" placeholder="Phone">
+              <mat-hint align="start"><strong>Mobile:</strong> 098 652 6222</mat-hint>
+              <mat-hint align="end">{{message.value.length}} / 10</mat-hint>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <mat-form-field class="example-full-width">
+        <textarea formControlName="bio" matInput placeholder="Bio" matTextareaAutosize matAutosizeMinRows=4 matAutosizeMaxRows=6 maxlength="300"></textarea>
+        <mat-hint align="start">Tell us about yourself.</mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 300</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="example-container col-md-5">
+      <h2>Account details</h2>
+      <mat-form-field class="example-full-width">
+        <input matInput type="text" formControlName="username" placeholder="Username">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput type="email" formControlName="email" placeholder="Email">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput type="password" formControlName="pass" placeholder="Password">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput type="password" formControlName="confirmpass" placeholder="Confirm Password">
+      </mat-form-field>
+      <mat-checkbox color="accent" (change)="changeCheck($event)">I agree terms & conditions</mat-checkbox>
+    <div class="example-full-width">
+      <button [disabled]="disabledAgreement" mat-raised-button color="accent" type="submit">Submit</button>
+    </div>
+  </div>
+  </div>
+
+</form>
