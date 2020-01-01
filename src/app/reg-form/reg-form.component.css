@@ -48,6 +48,7 @@
    border: none;
    overflow-wrap: break-word;
    overflow: hidden;
+   outline: none;
   }
   #fullname{
     font-weight: bolder;
