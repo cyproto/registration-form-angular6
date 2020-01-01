@@ -9,11 +9,11 @@ export class RegFormService {
   register: AngularFireList<any>;
   constructor(private AngFireDB: AngularFireDatabase) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.register = this.AngFireDB.list('/users');
   }
 
-  add(data: any, dob): void{
+  add(data: any, dob): void {
     this.register.push({
       data,
       dob

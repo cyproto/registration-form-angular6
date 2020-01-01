@@ -34,6 +34,24 @@
   }
   #avatar{
       border-radius: 50%;
-      height: 150px;
-      width: 150px;
+      height: 160px;
+      width: 160px;
+      margin-top: 10px;
+      margin-left: 10px;
+  }
+  textarea{
+      margin-top: 20px;
+      font-size: 15px;
+      text-align: center;
+      word-break: break-all;
+      max-height: fit-content;
+   border: none;
+   overflow-wrap: break-word;
+   overflow: hidden;
+  }
+  #fullname{
+    font-weight: bolder;
+  }
+  .profile:focus{
+      outline: none;
   }
