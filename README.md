@@ -4,6 +4,10 @@
 
 Dependencies: [package.json](https://github.com/cyproto/registration-form-angular6/blob/master/package.json)
 
+## Screenshot
+
+![img](https://i.imgur.com/j5MjQ4F.png)
+
 ## Live Demo
 
 [Click here](https://registration-form-angular6.firebaseapp.com/)
